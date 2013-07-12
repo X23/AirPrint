@@ -2,7 +2,7 @@
 apt-get update
 echo "y" | apt-get upgrade
 echo "y" | apt-get install cups avahi-daemon python-cups cups-pdf hpijs-ppds
-usermod -a -G lpadmin pi
+usermod -a -G lpadmin $1
 cupsctl --remote-admin
 ifconfig  | grep 'inet addr:'
 echo " head over to the web interface at either of the ip address on port 631 (http://ipaddress:631) above to set up your printer on the web interface"
